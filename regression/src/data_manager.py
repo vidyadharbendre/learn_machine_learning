@@ -34,9 +34,21 @@ import statsmodels.api as sm
 # pass width and height in inches to 'figure.figsize' 
 plt.rcParams['figure.figsize'] = [15,8]
 
+
+# class DataManager:
+    # def __init__(self, data_file_path):
+    #     self.load_data(data_file_path)
+
+    # def load_data(self, data_file_path):
+    #     # Load data into self.data
+    #     self.data = pd.read_csv(data_file_path)
+
+    # def display_initial_summary(self):
+    #     print(f'The shape of the dataframe is {self.data.shape[0]} rows and {self.data.shape[1]} columns')
 class DataManager():
     def __init__(self, file_path):
         self.file_path = file_path
+        self.df = None
         self.target = None
         self.numeric_data = None
         self.categorical_data = None
@@ -48,34 +60,36 @@ class DataManager():
         self.y_train = None
         self.y_test = None
 
-        # Create an empty dataframe to store the scores for various regression algorithms
-        self.regression_score_card = pd.DataFrame(columns=['Algorithm', 'Mean Absolute Error', 'Mean Squared Error', 'Root Mean Squared Error', 'R-squared'])
+#         # Create an empty dataframe to store the scores for various regression algorithms
+#         self.regression_score_card = pd.DataFrame(columns=['Algorithm', 'Mean Absolute Error', 'Mean Squared Error', 'Root Mean Squared Error', 'R-squared'])
         
-        # create an empty dataframe to store the scores for various algorithms
-        self.classification_score_card = pd.DataFrame(columns=['Probability Cutoff', 'AUC Score', 'Precision Score', 'Recall Score','Accuracy Score', 'Kappa Score', 'f1-score'])
+#         # create an empty dataframe to store the scores for various algorithms
+#         self.classification_score_card = pd.DataFrame(columns=['Probability Cutoff', 'AUC Score', 'Precision Score', 'Recall Score','Accuracy Score', 'Kappa Score', 'f1-score'])
         
-        # assign 'score_card' as global variable
+#         # assign 'score_card' as global variable
         global score_card
          
     def load_data(self):
-        self.data = pd.read_csv(self.file_path)
-    
-    def display_initial_summary(self):
+        self.df = pd.read_csv(self.file_path)
+ 
 
-        # Print the shape of the dataframe
-        print(f'The shape of the dataframe is {self.data.shape[0]} rows and {self.data.shape[1]} columns')
+    # def display_initial_summary(self):
+    #     print(f'The shape of the dataframe is {self.data.shape[0]} rows and {self.data.shape[1]} columns')
+
+    def display_initial_summary(self):
+        print(f'The shape of the dataframe is {self.df.shape[0]} rows and{self.df.shape[1]} columns')
 
         # Display information about the dataframe
         print('\nInfo about the dataframe:')
-        print(self.data.info())
+        print(self.df.info())
         
         # Display the first few rows of the dataframe
         print('\nFirst few rows of the dataframe:')
-        print(self.data.head())
+        print(self.df.head())
    
         # Display the last few rows of the dataframe
         print('\nFirst few rows of the dataframe:')
-        print(self.data.tail())
+        print(self.df.tail())
    
     
     def display_datatype(self):
@@ -182,3 +196,6 @@ class DataManager():
         return X, y
 
 
+
+
+# Rest of your code remains the same

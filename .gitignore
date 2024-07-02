@@ -1,2 +1,3 @@
 .DS_Store
 regression/jupyter_notebooks/.ipynb_checkpoints/*.*
+regression/jupyter_notebooks/.DS_Store/*.*

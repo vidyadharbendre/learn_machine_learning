@@ -45,6 +45,8 @@ This guide provides step-by-step instructions for participating in a Kaggle comp
    - Navigate to the "Data" tab.
    - Download the dataset(s) you need by clicking on them.
 
+   - **Download Data**: `kaggle competitions download -c competition-name`
+
 ## Writing Code and Making Submissions
 
 7. **Develop Your Model**
@@ -58,7 +60,7 @@ This guide provides step-by-step instructions for participating in a Kaggle comp
    - **Upload Submission File**:
      - Format your predictions according to competition guidelines.
      - Upload your submission file through the competition page.
-
+     - **Upload submission file**: `kaggle competitions submit -c competition-name -f submission.csv -m "Message"`
 ## Final Steps
 
 9. **Evaluate Your Submission**

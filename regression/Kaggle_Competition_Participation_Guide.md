@@ -18,6 +18,10 @@ This guide provides step-by-step instructions for participating in a Kaggle comp
    - Log in to Kaggle and go to your account settings page [here](https://www.kaggle.com/account).
    - Scroll down to the "API" section.
    - Click on "Create New API Token". This will download a file `kaggle.json` with your API credentials.
+   - Create .kaggle directory using 
+    ```
+    mkdir -p ~/.kaggle
+    ``````
    - Move the downloaded `kaggle.json` file to `~/.kaggle/` directory:
      ```
      mv ~/Downloads/kaggle.json ~/.kaggle/
